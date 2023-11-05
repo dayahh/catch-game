@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class PlayerController : MonoBehaviour
     float horizontalInput;
     float moveSpeed = 10f;
     Rigidbody2D rb;
+
+    public event Action PlayerDied;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("FallingObject"))
         {
+            PlayerDied.Invoke();
             Destroy(this.gameObject);
         }
     }
