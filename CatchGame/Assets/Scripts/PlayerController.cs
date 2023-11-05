@@ -25,6 +25,13 @@ public class PlayerController : MonoBehaviour
     {
        rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y); 
     }
-    
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("FallingObject"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
 }
