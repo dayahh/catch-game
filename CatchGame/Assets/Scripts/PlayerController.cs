@@ -5,24 +5,26 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
+    float horizontalInput;
+    float moveSpeed = 10f;
+    Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        mouseMove();
+        horizontalInput = Input.GetAxis("Horizontal");
     }
 
-    //moves the player character around
-    void mouseMove(){
-        Vector3 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        position.z = 0;
-        position.y = -4;
-        transform.position = position;
+    private void FixedUpdate() 
+    {
+       rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y); 
     }
+    
 
 }
