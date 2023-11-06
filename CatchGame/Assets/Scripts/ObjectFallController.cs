@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectFallController : MonoBehaviour
 {
-    float wait = 0.1f;
+    public float wait = 0.1f;
     public GameObject fallingObject;
 
     // Start is called before the first frame update
