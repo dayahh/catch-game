@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - FallingObject
+  - GameMusic
   layers:
   - Default
   - TransparentFX
