@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     public Canvas GameOverCanvas;
     public TMP_Text TimerText;
 
-    private float level2Req = 10f; //the time you need to last to reach level 2
+    public float levelReq = 10f; //the time you need to last to reach level 2
 
     private Boolean passedLVL1 = false;
 
@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour
 
     IEnumerator LevelUnlocked()
     {
-        yield return new WaitForSeconds(level2Req);
+        yield return new WaitForSeconds(levelReq);
 
         // now do something
         // Debug.Log("tracking time...");
@@ -68,7 +68,7 @@ public class GameController : MonoBehaviour
 
     public void GoToNextLevel()
     {
-        SceneManager.GetSceneByName("Level2");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 

@@ -586,6 +586,7 @@ MonoBehaviour:
   playerController: {fileID: 413605709}
   GameOverCanvas: {fileID: 148130715}
   TimerText: {fileID: 1923617278}
+  levelReq: 15
   nextLevelButton: {fileID: 1046461953}
 --- !u!1 &793546153
 GameObject:
@@ -1183,7 +1184,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level 2 Unlocked
+  m_text: Level Unlocked
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1290,7 +1291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95fc6ce62d052844bbda2bfdf51e55f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wait: 0.3
+  wait: 0.1
   fallingObject: {fileID: 6467678576318259635, guid: 192140d05b361d0469ae9770d1b1e365, type: 3}
 --- !u!212 &1714760278
 SpriteRenderer:
