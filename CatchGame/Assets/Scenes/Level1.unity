@@ -586,6 +586,7 @@ MonoBehaviour:
   playerController: {fileID: 413605709}
   GameOverCanvas: {fileID: 148130715}
   TimerText: {fileID: 1923617278}
+  levelReq: 10
   nextLevelButton: {fileID: 1046461953}
 --- !u!1 &793546153
 GameObject:
