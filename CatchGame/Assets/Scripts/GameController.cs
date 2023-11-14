@@ -11,6 +11,13 @@ public class GameController : MonoBehaviour
     public Canvas GameOverCanvas;
     public TMP_Text TimerText;
 
+    private float level2Req = 10f; //the time you need to last to reach level 2
+
+    private Boolean passedLVL1 = false;
+
+    public GameObject nextLevelButton;
+
+
     private void Awake() 
     {
         if(playerController != null)
@@ -21,6 +28,22 @@ public class GameController : MonoBehaviour
         if(GameOverCanvas.gameObject.activeSelf)
         {
             GameOverCanvas.gameObject.SetActive(false);
+        }
+
+        StartCoroutine(LevelUnlocked());
+
+    }
+
+    IEnumerator LevelUnlocked()
+    {
+        yield return new WaitForSeconds(level2Req);
+
+        // now do something
+        // Debug.Log("tracking time...");
+        passedLVL1 = true;
+
+        if(passedLVL1 == true){
+            nextLevelButton.gameObject.SetActive(true);
         }
     }
 
@@ -34,6 +57,8 @@ public class GameController : MonoBehaviour
         {
             playerController.PlayerDied -= WhenPlayerDies;
         }
+
+        
     }
 
     public void RetryClicked()
@@ -41,6 +66,10 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void GoToNextLevel()
+    {
+        SceneManager.GetSceneByName("Level2");
+    }
 
 
 }
